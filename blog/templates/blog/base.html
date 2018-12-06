@@ -1,0 +1,148 @@
+{% load static %}
+<html>
+    <head>
+        <title>Eilaf's Project!</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    </head>
+    <body>
+
+    <div class="page-header">
+
+    <a href="/" class="top-menu"><span class="glyphicon glyphicon-home"></span></a>
+    <a href="/admin/login/?next=/admin/" class="top-menu"><span class="glyphicon glyphicon-user"></span></a>
+    {% if user.is_authenticated %}
+        <a href="{% url 'post_new' %}" class="top-menu"><span style="color: blue;" class="glyphicon glyphicon-plus"></span></a>
+    {% endif %}
+    
+    <div class="dropdown-menu dropdown-right open">
+        <div class="dropdown-caret"><span class="caret-outer"></span><span class="caret-inner"></span></div>
+        <div class="buttons">
+            <button class="button size-2 font-reduce">A</button>
+            <button class="button size-2 font-enlarge">A</button>
+        </div>
+        <div class="buttons">
+            <button class="button size-2 ">Serif</button>
+            <button class="button size-2 ">Sans</button>
+        </div>
+        <div class="buttons">
+            <button class="button size-3 ">White</button>
+            <button class="button size-3 ">Sepia</button>
+            <button class="button size-3 ">Night</button>
+        </div>
+    </div>
+    <br/><br/><br/>
+
+    <a href="/"><img style="width:103%;" src="https://www.transmittingscience.org/wp-content/uploads/Header-of-Next-events-at-Transmitting-Science.jpg"/></a>
+
+<style>
+/* Style The Dropdown Button */
+.dropbtn {
+background-color: #ECE9F2;
+color: white;
+padding: 20px;
+font-size: 16px;
+border: none;
+cursor: pointer;
+}
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+/*position: relative;*/
+display: inline-block;
+/*position: relative;
+left: 800px;*/
+}
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+display: none;
+/*position: absolute;*/
+background-color: #ECE9F2;
+min-width: 160px;
+box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+z-index: 1;
+
+}
+/* Links inside the dropdown */
+.dropdown-content a {
+color: black;
+padding: 12px 16px;
+text-decoration: none;
+display: block;
+}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ECE9F2}
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+display: block;
+}
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+background-color: #ECE9F2;
+}
+</style>
+
+<!--
+<div class="dropdown top-menu">
+<button class="dropbtn">Dropdown</button>
+<div class="dropdown-content">
+<a href="/">Home</a>
+<a href="/gallery">Gallery</a>
+<a href="/post/new">New Post</a>
+<a href="/admin/login/?next=/admin/">Admin LogIn</a>
+</div>
+</div>
+-->
+
+<br/> 
+
+<h1><a href="/"><strong>H2H Respect</strong> Blog</a></h1>
+
+
+    </div>
+
+        <hr/>
+
+
+
+    <div class="content container">
+        <div class="row">
+            <p> <strong> Out of respect for humanity … </strong></p>
+                
+                <p>
+                    
+                    To increase the awareness in any public opinion case. In this blog I will showcase some problem that went viral, then me and my team will write our thoughts about them. We welcome you to write your thoughts as well in the comment section. Let’s share our respect for others and try to do butter in life. Because once life is affected by all the surrounded public case and all of us have their own opinion about them. Example can be about humans that lost their respect to one another, we will use them as a reminder to behave right. We will not point fingers, we will only stat our thoughts of the situation.
+                   </p>
+                   <P> <strong>That said, please enjoy your readings, and don’t forget to share your thoughts…</strong></p>
+                 </div>
+            <hr/>
+
+<!-- 16:9 aspect ratio -->
+<div>
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/b1ug9VtE8Fw">
+
+</iframe>
+</div>
+
+<!-- 4:3 aspect ratio -->
+<!--div class="embed-responsive embed-responsive-4by3">
+<iframe width="420" height="315"
+src="https://www.youtube.com/embed/tgbNymZ7vqY">
+</iframe>
+</div-->
+
+    <br/> <br/> <br/>    
+            <div class="row">
+            <div class="col-md-8">
+            {% block content %}
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+        <br/> <br/> <br/>    
+
+</body>
+
+</html>
